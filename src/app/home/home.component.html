@@ -1,3 +1,7 @@
 <div class="container">    
     <input  id="file" type="file" accept=".csv" (change)="fileUpload($event.target.files)">
+
+    <button class="btn-primary" (click)="randomElement()">Click here!</button>
+
+    <p>The code choose... {{chosenElement}}</p>
 </div>
