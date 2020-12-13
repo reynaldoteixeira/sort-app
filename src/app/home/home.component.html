@@ -1,9 +1,3 @@
-<div class="container">
-    <div class="row">
-        <div class="col-6" *ngFor="let list of nameForSort">
-            {{list}}
-        </div>
-    </div>
-    
+<div class="container">    
     <input  id="file" type="file" accept=".csv" (change)="fileUpload($event.target.files)">
 </div>
