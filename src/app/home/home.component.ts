@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  nameForSort: any = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,22 +23,17 @@ export class HomeComponent implements OnInit {
 
       reader.onload = (e) => {
 
-        const res = reader.result as string; // This variable contains your file as text
+        const res = reader.result as string; // pega todosos valores da planilha em csv e transforma em uma grande string
         const lines = res.split('\n'); // Splits you file into lines
-        const ids = [];
-        const names = [];
 
-        lines.forEach((line) => {
-          ids.push(line.split(',')[0]); // Get first item of line
-        });
 
-        lines.forEach((line) => { // para cada linha
-          names.push(line.split(',')[1]); // pega oo valor da segunda coluna e armazena na variável 'names'
+        lines.forEach((line) => { // para cada linha que separamos na variável line
+          this.nameForSort.push(line.split(',')[1]); // pega oo valor da segunda coluna e armazena na variável 'names'
         });
-        console.log(ids);
-        console.log(names);
+  
       };
     }
+
   }
 
 }
