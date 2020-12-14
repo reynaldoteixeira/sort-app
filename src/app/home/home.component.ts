@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2'
+import { CustomSweetAlertService } from '../services/custom-sweet-alert.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ export class HomeComponent implements OnInit {
   nameForSort: any = [];
   chosenElement:any;
 
-  constructor() { }
+  constructor( private alert: CustomSweetAlertService) { }
 
   ngOnInit(): void {
   }
@@ -38,9 +40,18 @@ export class HomeComponent implements OnInit {
   }
 
   randomElement(){
-    const random = Math.floor(Math.random() * this.nameForSort.length);
 
-    this.chosenElement = this.nameForSort[random];
+    if (this.nameForSort.length > 0) {
+      const random = Math.floor(Math.random() * this.nameForSort.length);
+
+      this.chosenElement = this.nameForSort[random];
+
+    } else {
+      this.alert.alertWarning();
+    }
+ 
+
+    
   }
 
 }
