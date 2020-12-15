@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
 import { CustomSweetAlertService } from '../services/custom-sweet-alert.service';
+import { RouteNavigateService } from '../services/route-navigate.service';
 
 @Component({
   selector: 'app-upload',
@@ -13,7 +14,8 @@ export class UploadComponent implements OnInit {
   chosenElement:any;
 
   constructor(
-    private alert: CustomSweetAlertService
+    private alert: CustomSweetAlertService,
+    private route: RouteNavigateService
   ) { }
 
   ngOnInit(): void {
@@ -51,9 +53,11 @@ export class UploadComponent implements OnInit {
     } else {
       this.alert.alertWarning();
     }
- 
-
     
+  }
+
+  homePage(){
+    this.route.navigateTo('home')
   }
 
 }
