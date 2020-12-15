@@ -6,6 +6,7 @@ import { ListComponent } from './list/list.component';
 import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
+  { path:'', redirectTo: 'home', pathMatch: 'full' }, //Redireciona para a rota com nome 'home'
   { path: 'home', component: HomeComponent },
   { path: 'upload-file', component: UploadComponent },
   { path: 'list', component: ListComponent }
