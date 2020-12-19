@@ -1,1 +1,39 @@
-<p>list works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Brand</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">How Works?</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-10 offset-1 mt-5">
+            <div class="form-group">
+                <label for="textArea">Type here!</label>
+                <textarea class="form-control" id="textArea" rows="3"></textarea>
+              </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <button class="btn btn-outline-dark btn-lg" (click)="backHomeList()">Back to home</button>
+        </div>
+
+        <div class="col-2">
+            <button class="btn btn-info btn-lg" (click)="submitList()">Submit list</button>
+        </div>
+    </div>
+</div>
