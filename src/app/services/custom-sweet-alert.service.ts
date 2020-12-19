@@ -10,6 +10,15 @@ export class CustomSweetAlertService {
 
     constructor () {}
 
+    alertListWarning(text:string){
+        Swal.fire({
+            title: 'Error!',
+            text: text,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+        });
+    }
+
     alertWarning () {
         Swal.fire({
             title: 'Error!',
