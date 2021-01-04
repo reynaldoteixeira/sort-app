@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2';
 import { CustomSweetAlertService } from '../services/custom-sweet-alert.service';
 import { RouteNavigateService } from '../services/route-navigate.service';
 
